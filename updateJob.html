@@ -1,0 +1,27 @@
+{% extends "_base.html"%}
+
+{% block title %} Update Job {% endblock %}
+
+{% block content%}
+
+<div class="wrap">
+    <h1>Update Job</h1>
+
+    <form action="{{ url_for('update_job', id=id) }}" method="post">
+        <label for="city">City</label>
+        <input type="text" name="city" required value="{{ job.city }}"><br><br>
+
+        <label for="name">Name</label>
+        <input type="text" name="name" required value="{{ job.name }}"><br><br>
+
+        <label for="description">Description(optional)</label>
+        <textarea name="description" id="">{{ job.description }}</textarea><br><br>
+
+        <label for="sallary">Sallary</label>
+        <input type="number" required name="sallary" value="{{ job.sallary }}"><br><br>
+
+        <button type="submit">Update Job</button>
+    </form>
+</div>
+
+{% endblock %}  

@@ -1,0 +1,41 @@
+{% extends "_base.html"%}
+
+{% block title %} Find House {% endblock %}
+
+{% block content%}
+
+
+<div class="wrap">
+    <header>
+        <div class="hmain">
+            <h1>Find House</h1>
+            <a href="{{ url_for('find_job_page') }}">Find Job</a>
+        </div>
+    
+        <nav>
+            <a href="{{ url_for('all_houses_page') }}">All Houses</a>
+            <a href="{{ url_for('all_jobs_page') }}">All Jobs</a>
+            {% if isSeller == True %}
+            <a href="{{ url_for('add_house_page') }}">Add House</a>
+            <a href="{{ url_for('add_job_page') }}">Add Job</a>
+            <a href="{{ url_for('my_offers_page') }}">My Offers</a>
+            {% endif %}
+            <a href="{{ url_for('my_profile_page') }}">My Profile</a>
+            <a href="{{ url_for('log_out') }}" style="color: rgb(159, 0, 0)">Log Out</a>
+        </nav>
+    </header>
+    
+    <main>
+        <form action="{{ url_for('find_house') }}" method="post">
+            <label for="city">City</label>
+            <input type="text" name="city" required><br><br>
+    
+            <label for="pet-friendly">Pet Friendly</label>
+            <input type="checkbox" value="on" name="pet-friendly"><br><br>
+    
+            <button type="submit">Find House</button>
+        </form>
+    </main>
+</div>
+
+{% endblock %}

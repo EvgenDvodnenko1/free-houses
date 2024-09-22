@@ -1,0 +1,20 @@
+{% extends "_base.html"%}
+
+{% block title %} My Profile {% endblock %}
+
+{% block content%}
+
+<div class="wrap">
+    <h1>My Profile</h1>
+
+    <div class="content">
+        <h2>Name: {{ user.name }}</h2>
+        <h2>Age : {{ user.age }}</h2>
+        <h2>User Type: {{ user.user_role }}</h2>
+        <h2>Phone Number: {{ user.phone_number }}</h2>
+    </div>
+
+    <a href="{{ url_for('update_profile_page') }}"><button>Update Profile</button></a>
+</div>
+
+{% endblock %}

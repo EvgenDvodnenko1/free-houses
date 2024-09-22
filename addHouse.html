@@ -1,0 +1,26 @@
+{% extends "_base.html"%}
+
+{% block title %} Add House {% endblock %}
+
+{% block content%}
+
+<div class="wrap">
+    <h1>Add House</h1>
+
+    <form action="{{ url_for('add_house') }}" method="post">
+        <label for="city">City</label>
+        <input type="text" name="city" required><br><br>
+
+        <label for="pet-friendly">Pet Friendly</label>
+        <input type="checkbox" name="pet-friendly"><br><br>
+
+        <select name="house-type" id="house-type">
+            <option value="house">House</option>
+            <option value="apartment">Apartment</option>
+        </select><br><br>
+
+        <button type="submit">Add House</button>
+    </form>
+</div>
+
+{% endblock %}  

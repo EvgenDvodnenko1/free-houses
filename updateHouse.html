@@ -1,0 +1,26 @@
+{% extends "_base.html"%}
+
+{% block title %} Update House {% endblock %}
+
+{% block content%}
+
+<div class="wrap">
+    <h1>Update House</h1>
+
+    <form action="{{ url_for('update_house_page', id=id) }}" method="post">
+        <label for="city">City</label>
+        <input type="text" name="city" required value="{{ house.city }}"><br><br>
+
+        <label for="pet-friendly">Pet Friendly</label>
+        <input type="checkbox" name="pet-friendly"><br><br>
+
+        <select name="house-type" id="house-type">
+            <option value="house">House</option>
+            <option value="apartment">Apartment</option>
+        </select><br><br>
+
+        <button type="submit">Update House</button>
+    </form>
+</div>
+
+{% endblock %}  

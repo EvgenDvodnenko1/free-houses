@@ -1,0 +1,74 @@
+{% extends "_base.html"%}
+
+{% block title %} My Offers {% endblock %}
+
+{% block content%}
+
+<div class="wrap">
+    <h1>My Offers</h1>
+    <h2>I have {{ houses|length }} houses; {{ jobs|length }} jobs</h2>
+
+    <div class="all-elems">
+
+        <div class="houses">
+            {% if houses|length > 0 %} <h2>My Houses</h2> {% endif %}
+
+            {% for i in houses %}
+            <div class="elem">
+                <div class="left">
+                    <h2>City: {{ i.city }}</h2>
+                    <h2>House Type: {{ i.house_type }}</h2>
+                    {% if i.pet_friendly %}
+                        <h2 style="color: rgb(0, 171, 0);">This house is pet friendly</h2>
+                    {% else %}
+                        <h2 style="color: rgb(153, 0, 0)">This house is not pet friendly</h2>
+                    {% endif %}
+
+                    <a href="{{ url_for('update_house_page', id=i.id) }}">
+                        <button>Update House</button>
+                    </a>
+                </div>
+                <div class="right">
+                    <h2>Owner Name: {{ i.owner_name }}</h2>
+                    <h2>Owner Age: {{ i.owner_age }}</h2>
+                    <h2>Owner Phone Number: {{ i.owner_phone_number }}</h2>
+
+                    <a href="{{ url_for('delete_house', id=i.id) }}">
+                        <button>Delete House</button>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="jobs">
+            {% if jobs|length > 0 %} <h2>My Jobs</h2> {% endif %}
+
+            {% for i in jobs %}
+            <div class="elem">
+                <div class="left">
+                    <h2>City: {{ i.city }}</h2>
+                    <h2>Name: {{ i.name }}</h2>
+                    <h2>Description: {{ i.description }}</h2>
+                    <h2>Sallary: {{ i.sallary }}</h2>
+
+                    <a href="{{ url_for('update_job_page', id=i.id) }}">
+                        <button>Update Job</button>
+                    </a>
+                </div>
+                <div class="right">
+                    <h2>Owner name: {{ i.owner_name }}</h2>
+                    <h2>Owner age: {{ i.owner_age }}</h2>
+                    <h2>Owner phone number: {{ i.owner_phone_number }}</h2>
+
+                    <a href="{{ url_for('delete_job', id=i.id) }}">
+                        <button>Delete Job</button>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

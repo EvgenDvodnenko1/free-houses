@@ -1,0 +1,33 @@
+{% extends "_base.html"%}
+
+{% block title %} Sign Up {% endblock %}
+
+{% block content%}
+
+<div class="wrap">
+    <h1>Sign Up</h1>
+
+    <form action="{{ url_for('sign_up') }}" method="post">
+
+        <label for="name">Name</label>
+        <input type="text" name="name" required><br><br>
+
+        <label for="age">Age</label>
+        <input type="number" name="age" min="0" required><br><br>
+
+        <label for="phone-number">Phone Number</label>
+        <input type="text" name="phone-number" required><br><br>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" required><br><br>
+
+        <select name="role" id="role">
+            <option value="seller">Seller/employer</option>
+            <option value="client">Client</option>
+        </select><br><br>
+
+        <button type="submit">Create Account</button>
+    </form>
+</div>
+
+{% endblock %}

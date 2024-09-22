@@ -1,0 +1,30 @@
+{% extends "_base.html"%}
+
+{% block title %} Results {% endblock %}
+
+{% block content%}
+
+<div class="wrap">
+    <h1>Results</h1>
+
+    <div class="all-elems">
+        <h2>{{ results|length }} jobs found</h2>
+        {% for i in results %}
+        <div class="elem">
+            <div class="left">
+                <h2>City: {{ i.city }}</h2>
+                <h2>Name: {{ i.name }}</h2>
+                <h2>Description: {{ i.description }}</h2>
+                <h2>Sallary: {{ i.sallary }}</h2>
+            </div>
+            <div class="right">
+                <h2>Owner name: {{ i.owner_name }}</h2>
+                <h2>Owner age: {{ i.owner_age }}</h2>
+                <h2>Owner phone number: {{ i.owner_phone_number }}</h2>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

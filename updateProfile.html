@@ -1,0 +1,32 @@
+{% extends "_base.html"%}
+
+{% block title %} Update Profile {% endblock %}
+
+{% block content%}
+
+<div class="wrap">
+    <h1>Update Profile</h1>
+
+    <form action="{{ url_for('update_profile', id=id) }}" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" required value="{{ user.name }}"><br><br>
+
+        <label for="age">Age</label>
+        <input type="number" name="age" min="0" required value="{{ user.age }}"><br><br>
+
+        <label for="phone-number">Phone Number</label>
+        <input type="text" name="phone-number" required value="{{ user.phone_number }}"><br><br>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" required value="{{ user.password }}"><br><br>
+
+        <select name="role" id="role">
+            <option value="seller">Seller/employer</option>
+            <option value="client">Client</option>
+        </select><br><br>
+
+        <button type="submit">Update Profile</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "_base.html"%}
+
+{% block title %} Authorize {% endblock %}
+
+{% block content%}
+
+<div class="wrap">
+    <h1>Authorize</h1>
+    <div class="links">
+        <a href="{{ url_for('sign_up_page') }}">Sign Up</a>
+        <a href="{{ url_for('log_in_page') }}">Log In</a>
+    </div>
+</div>
+
+{% endblock %}

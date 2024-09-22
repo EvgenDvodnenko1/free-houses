@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial';
+}
+
+.wrap{
+    width: 100%;
+    min-height: 90%;
+    height: fit-content;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button{
+    background-color: #ccc;
+    color: black;
+    transition: 0.3s;
+    padding: 10px 20px;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+label{
+    font-size: 18px;
+}
+
+input{
+    padding: 5px 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+button:hover{
+    background-color: #a8a8a8;
+    color: black;
+    transition: 0.3s;
+    padding: 10px 20px;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+h1{
+    font-size: 40px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    width: 90%;
+
+    align-items: center;
+}
+
+.hmain{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+main{
+    width: 90%;
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.all-elems{
+    width: 90%;
+}
+
+.elem{
+    height: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 20px 0;
+    border: 1px solid #a8a8a8;
+    border-radius: 15px;
+}
+
+.elem .left,
+.elem .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+a{
+    font-size: 20px;
+    color: gray;
+    text-decoration: none;
+    transition: 0.3s;
+    margin: 0 10px;
+}
+
+header a:hover{
+    font-size: 20px;
+    color: rgb(87, 87, 87);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    height: 10vh;
+    width: 90%;
+    margin-left: 5%;
+    align-items: center;
+}
